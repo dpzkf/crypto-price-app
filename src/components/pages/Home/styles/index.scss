@@ -1,0 +1,86 @@
+.coins-content {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #161616;
+
+  @media (max-width: 375px) {
+  }
+
+  .ant-card-body {
+    height: 90px;
+    width: 460px;
+
+    @media (max-width: 425px) {
+      height: 85px;
+      width: 340px;
+      padding: 24px 10px;
+    }
+  }
+
+  .ant-card-meta-avatar {
+    display: flex;
+
+    img {
+      width: 46px;
+      height: 46px;
+    }
+  }
+  .ant-card-meta-detail > div:not(:last-child) {
+    margin: 0;
+  }
+  .ant-card-meta-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 70%;
+
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 22px;
+
+    &_currency {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    &_price {
+      &::before {
+        content: "$";
+      }
+    }
+  }
+
+  .ant-card-meta-description {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 500;
+
+    color: #aaa;
+    text-transform: uppercase;
+  }
+  .coin {
+    &.coin-rising {
+      background: linear-gradient(90deg, #202022, #4eb64510);
+
+      .ant-card-meta-title {
+        &_price {
+          color: #30ff20;
+        }
+      }
+    }
+
+    &.coin-falling {
+      background: linear-gradient(90deg, #202022, #aa444425);
+
+      .ant-card-meta-title {
+        &_price {
+          color: #ff4040;
+        }
+      }
+    }
+  }
+}
