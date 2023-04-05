@@ -39,7 +39,7 @@ const Home = ({ data, coinImageUrl, isLoading, isError }: ICoinsProps) => {
         </Space>
 
         {isLoading && <Spin indicator={antIcon} />}
-        {isError && <span style={{ color: "#fff" }}>Error</span>}
+        {isError && <span style={{ color: "#aaa" }}>Error</span>}
       </div>
     </>
   );
