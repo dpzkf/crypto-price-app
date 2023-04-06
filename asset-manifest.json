@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/crypto-price-app/static/css/main.8173f8bb.css",
+    "main.js": "/crypto-price-app/static/js/main.0b4a4229.js",
+    "index.html": "/crypto-price-app/index.html",
+    "main.8173f8bb.css.map": "/crypto-price-app/static/css/main.8173f8bb.css.map",
+    "main.0b4a4229.js.map": "/crypto-price-app/static/js/main.0b4a4229.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8173f8bb.css",
+    "static/js/main.0b4a4229.js"
+  ]
+}
