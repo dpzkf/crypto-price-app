@@ -23,10 +23,10 @@ jobs:
       run: |
         bundle install
         bundle exec jekyll build
-        git config --global user.name ${{ secrets.dpzkf }}
-        git config --global user.email ${{ secrets.dpzkfzzz@gmail.com }}
+        git config --global user.name "dpzkf"
+        git config --global user.email "dpzkfzzz@gmail.com"
         cd _site
         git init
         git add .
         git commit -m "Deploy to GitHub Pages"
-        git push --force --quiet "https://${{ secrets.dpzkf }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" master:gh-pages
+        git push --force --quiet "https://${{ secrets.GITHUB_USERNAME }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" master:gh-pages
