@@ -1,32 +1,31 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
   push:
     branches:
-      - main  # replace with your main branch name
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout main branch
+    - name: Checkout code
       uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2-beta
       with:
-        ref: main  # replace with your main branch name
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
+        node-version: '17'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build
+      run: npm run build
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.1
       with:
-        ruby-version: '2.7'
-    - name: Build and Deploy
-      env:
-        JEKYLL_ENV: production
-      run: |
-        bundle install
-        bundle exec jekyll build
-        git config --global user.name "dpzkf"
-        git config --global user.email "dpzkfzzz@gmail.com"
-        cd _site
-        git init
-        git add .
-        git commit -m "Deploy to GitHub Pages"
-        git push --force --quiet "https://${{ secrets.GITHUB_USERNAME }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" master:gh-pages
+        branch: gh-pages
+        folder: build
