@@ -4,7 +4,7 @@ class CoinsService {
   async getCoinsPrice() {
     const response = await api.get("/simple/price", {
       params: {
-        ids: "bitcoin,tether,ethereum,litecoin,dogecoin,cardano",
+        ids: "bitcoin,tether,ethereum,litecoin,dogecoin,cardano,ripple,binancecoin",
         vs_currencies: "usd",
         include_24hr_change: "true",
       },
