@@ -1,1 +1,1 @@
-https://dpzkf.github.io/crypto-price-app/
+site: https://dpzkf.github.io/crypto-price-app/
