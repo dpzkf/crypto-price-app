@@ -4,8 +4,12 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #161616;
-
+  background: rgb(22, 22, 22);
+  background: linear-gradient(
+    291deg,
+    rgba(22, 22, 22, 1) 62%,
+    rgba(4, 36, 70, 1) 75%
+  );
   @media (max-width: 375px) {
   }
 
